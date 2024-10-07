@@ -1,0 +1,56 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 80%;
+    color: white;
+    cursor: pointer;
+}
+
+th {
+    border: 1px solid #dddddd;
+    color: #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 20%;
+}
+
+.available {
+    background-color: green;
+}
+
+.notAvailable {
+    background-color: red;
+}
+
+.btngroup {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+button {
+    height: 30px;
+    align-items: center;
+    margin: 2px 2px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.makeAvail {
+    background-color: green;
+    color: white;
+}
+
+.makeUnAvail {
+    background-color: red;
+    color: white;
+}
