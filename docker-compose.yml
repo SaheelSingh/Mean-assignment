@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+  db:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    ports:
+      - 27017:27017
+    volumes:
+      - mongoData:/data/db
+    networks:
+      - mynetwork
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile # Ensure the filename matches the actual Dockerfile name
+    container_name: backend
+    ports:
+      - 4000:4000
+    volumes:
+      - ./backend:/backend # Remove this if not needed
+      - /backend/node_modules
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+    
+  # frontend:
+  #   build: 
+  #     context: ./frontend
+  #     dockerfile: Dockerfile # Ensure the filename matches the actual Dockerfile name
+  #   container_name: frontend
+  #   ports:
+  #     - 4200:4200
+  #   volumes:
+  #     - ./frontend:/frontend # Remove this if not needed
+  #     -  /frontend/node_modules
+  #   depends_on:
+  #     - backend
+  #   networks:
+  #     - mynetwork
+    
+volumes:
+  mongoData:
+  # frontend_node_modules:
+  # backend_node_modules:
+
+networks:
+  mynetwork:
+    driver: bridge
