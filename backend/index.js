@@ -25,14 +25,23 @@ app.get('/', async (req, res) => {
     }
 })
 
-// app.get('/available', async (req, res) => {
-//     try {
-//         const getAvailable = await item.find({available: true})
-//         res.json(getAvailable)
-//     } catch (error) {
-//         res.status(400).json('somthing went wrong')
-//     }
-// })
+app.get('/available', async (req, res) => {
+    try {
+        const getAvailable = await item.find({available: true})
+        res.json(getAvailable)
+    } catch (error) {
+        res.status(400).json('somthing went wrong')
+    }
+})
+
+app.get('/unavailable', async (req, res) => {
+    try {
+        const getAvailable = await item.find({available: false})
+        res.json(getAvailable)
+    } catch (error) {
+        res.status(400).json('somthing went wrong')
+    }
+})
 
 app.get('/item/:id', async (req, res) => {
     try {
