@@ -2,13 +2,17 @@
     <div class="btngroup">
         <button type="button" class="makeAvail" (click)="handleAllAvailable()">Make all available</button>
         <button type="button" class="makeUnAvail" (click)="handleAllUnAvailable()">Make all unavailable</button>
-    </div>    
-    <table>
+    </div> 
+    
+    <app-item-list [items]="items" />
+   
+    <!-- <table>
         <tr>
             <th>Name</th>
         </tr>
+        <app-item-list [items]="items" />
         <tr *ngFor="let item of items" [ngClass]="{'available': item.available === true, 'notAvailable': item.available === false}">
             <td (click)="toggleAvailability(item)">{{ item.name }}</td>
         </tr>
-    </table>
+    </table> -->
 </div>

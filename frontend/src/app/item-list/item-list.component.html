@@ -1,0 +1,10 @@
+
+<table>
+    <tr>
+        <th>Name</th>
+    </tr>
+    
+    <tr *ngFor="let item of items" [ngClass]="{'available': item.available === true, 'notAvailable': item.available === false}">
+        <td (click)="toggleAvailability(item)">{{ item.name }}</td>
+    </tr>
+</table>

@@ -1,0 +1,31 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 80%;
+    color: white;
+    cursor: pointer;
+}
+
+th {
+    border: 1px solid #dddddd;
+    color: #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 20%;
+}
+
+.available {
+    background-color: green;
+}
+
+.notAvailable {
+    background-color: red;
+}
