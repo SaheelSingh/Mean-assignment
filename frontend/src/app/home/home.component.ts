@@ -6,7 +6,7 @@ import { ItemService } from '../item.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   items: any
 
@@ -41,6 +41,18 @@ export class HomeComponent {
       console.log(updateData)
     });
     this.fetchData();
+  }
+
+  listAllAvailableItem() {
+    this.item.getAllAvailableItems().subscribe(data => {
+      this.items = data
+    })
+  }
+
+  listAllUnAvailableItem() {
+    this.item.getAllUnAvailableItems().subscribe(data => {
+      this.items = data
+    })
   }
   
 }
